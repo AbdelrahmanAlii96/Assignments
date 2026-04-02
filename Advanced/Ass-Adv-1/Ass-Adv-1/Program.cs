@@ -1,4 +1,8 @@
-﻿namespace Ass_Adv_1
+﻿using Ass_Adv_1.BaseClass;
+using Ass_Adv_1.DefaultConstrain;
+using Ass_Adv_1.GenericConstrains;
+
+namespace Ass_Adv_1
 {
     internal class Program
     {
@@ -109,11 +113,21 @@
             //Interface Constrain requires T to implement a specific interface.
             //This enables calling interface methods on type parameter
 
+            //Check GenericInterface folder
+            //Printer<Document> Doc = new Printer<Document>();
+            //Printer<Photo> Ph = new Printer<Photo>();
+            //Doc.Printitem(new Document());
+            //Ph.Printitem(new Photo());
+
             #endregion
 
             #region Q-11
             //restrict a type parameter so that it must inherit from a specific base class. 
             //This ensures that the generic type has all members of that base class
+
+            //Check GenericConstrains folder
+            //AnimalHandler<Dog> animalHandler = new AnimalHandler<Dog>();
+            //animalHandler.Feed(new Dog());
 
             #endregion
 
@@ -122,11 +136,73 @@
             //you can apply multiple constraints to a generic type parameter using the where keyword.
             //You can combine: 1 - Base class constraint
             //                  2-Interface constraints
-            //                  3-Constructor constraint
+            //                  3-Constructor constraint new ()
+            // base class should come first then interface then new ()
+
+
+            // Check GenericConstrains folder
+            //Trainer<Dog> DogTrainer = new Trainer<Dog>();
+            //DogTrainer.Work();
+
+            //Trainer<Cat> CatTrainer = new Trainer<Cat>();
+            //CatTrainer.Work();
+
+
             #endregion
 
+            #region Q-13
+            //Default used to produce the default value of a type parameter , when you don't know actual type at compile time
+            //ValueOrDefault<int> xint = new ValueOrDefault<int>();
+            //ValueOrDefault<string> xstring = new ValueOrDefault<string>();
+
+            //Console.WriteLine($"int  default is  {xint.GetValueOrDefualt()}");
+            //Console.WriteLine($"string  default is {xstring.GetValueOrDefualt()}");
+
+            #endregion
+
+            #region Q-14
+            //SafeList<int> intlist = new SafeList<int>();
+            //intlist.add(1);
+            //intlist.add(2);
+            //intlist.add(3);
+
+            //Console.WriteLine(intlist.GetItem(5));
+
+            #endregion
+
+            #region Q-15
+            //Covariance allows you to use a more derived type than originally specified
+            //out T can only appear in output positions.
+
+            #endregion
+
+            #region Q-16
+            // Contravariance allows you to use a less derived type than originally specified 
+            // in T can only appear in input positions.
+
+            #endregion
+
+            #region Q-17
+            // 1- Covariance (out keyword) : use a more derived type than originally specified .
+            //                             : Output only (return)
 
 
+            // 2 - Contravariance (in keyword) : use a less derived type than originally specified.
+            //                                 : Input only (parameter)
+            #endregion
+
+            #region Q-18
+            // Each closed generic type has its own copy of static fields. 
+            // List<int> and List<string> have separate static data .
+
+            #endregion
+
+            #region Q-19
+            // you can inherit from a generic class in a few different ways depending on whether 
+            // you want to keep the type parameter generic or fix it to a specific type.
+
+
+            #endregion
 
 
         }
